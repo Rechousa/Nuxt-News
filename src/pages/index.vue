@@ -5,16 +5,14 @@
       <md-button class="md-icon-button">
         <md-icon>menu</md-icon>
       </md-button>
-      <nuxt-link class="md-primary md-title" to="/">
-        NuxtNews
-      </nuxt-link>
+      <nuxt-link class="md-primary md-title" to="/">NuxtNews</nuxt-link>
 
       <div class="md-toolbar-section-end">
         <md-button to="/login">Login</md-button>
         <md-button to="/register">Register</md-button>
       </div>
     </md-toolbar>
-    
+
     <!-- App Content -->
     <div class="md-layout-item md-size-95">
       <md-content class="md-layout md-gutter" style="background: #007998; padding: 1em">
@@ -71,10 +69,13 @@
 
 <script>
 export default {
-  async asyncData({ app }) {
-    const topHeadlines = await app.$axios.$get("/api/top-headlines?country=us");
-
-    return { headlines: topHeadlines.articles };
+  async fetch({ store }) {
+    await store.dispatch('loadHeadlines', '/api/top-headlines?country=us')
+  },
+  computed: {
+    headlines() {
+      return this.$store.getters.headlines;
+    }
   }
 };
 </script>
@@ -84,9 +85,9 @@ export default {
   font-size: 18px !important;
 }
 
-.fixed-toolbar  {
+.fixed-toolbar {
   position: fixed;
-  top:0;
+  top: 0;
   z-index: 5;
 }
 </style>
