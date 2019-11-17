@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Nuxt News</h1>
     <div>
       <md-button>Default</md-button>
       <md-button :md-ripple="false">Ripple Off</md-button>
