@@ -39,15 +39,14 @@
         </md-card-actions>
       </form>
 
-      <md-snackbar :md-active.sync="isAuthenticated">
-          {{ form.email }} was successfully registered!
-      </md-snackbar>
+      <md-snackbar :md-active.sync="isAuthenticated">{{ form.email }} was successfully registered!</md-snackbar>
     </md-card>
   </div>
 </template>
 
 <script>
 export default {
+  middleware: "auth",
   data: () => ({
     form: {
       email: "",

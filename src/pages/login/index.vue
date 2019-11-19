@@ -1,3 +1,9 @@
 <template>
-    <p>Login</p>
+  <p>Login</p>
 </template>
+
+<script>
+export default {
+  middleware: "auth"
+};
+</script>
