@@ -63,7 +63,7 @@ module.exports = {
       pathRewrite: { "^/api/": "" }
     },
     "/register/": {
-      target: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBJLyyfPyDdhAOciDMHF_g2qZz4etwmr-w",
+      target: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[APIKEY]",
       pathRewrite: { "^/register/": "" }
     }
   },
