@@ -17,7 +17,7 @@
     <!-- Personal News Feed (Left Drawer) -->
     <md-drawer md-fixed :md-active.sync="showLeftSidePanel">
       <md-toolbar md-elevation="1">
-        <span class="md-title">Persnal Feed</span>
+        <span class="md-title">Personal Feed</span>
       </md-toolbar>
 
       <md-progress-bar v-if="loading" md-mode="indeterminate"></md-progress-bar>
@@ -74,7 +74,7 @@
 
               <md-card-header>
                 <div class="md-title">
-                  <a :href="headline.url" target="_blank">{{headline.title}}{</a>
+                  <a :href="headline.url" target="_blank">{{headline.title}}</a>
                 </div>
 
                 <div>
