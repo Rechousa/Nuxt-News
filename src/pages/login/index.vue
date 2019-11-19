@@ -6,4 +6,4 @@
 export default {
   middleware: "auth"
 };
-</script>
+</script> 
