@@ -64,9 +64,13 @@ module.exports = {
       pathRewrite: { "^/api/": "" }
     },
     "/register/": {
-      target: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[APIKEY]",
+      target: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyASKsY3RAogg6LNfLqplYZ-xhIyJojOOV8",
       pathRewrite: { "^/register/": "" }
-    }
+    },
+    "/login/": {
+      target: "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyASKsY3RAogg6LNfLqplYZ-xhIyJojOOV8",
+      pathRewrite: { "^/login/": "" }
+    },
   },
 
   env: {
