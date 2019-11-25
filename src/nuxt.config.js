@@ -1,4 +1,5 @@
 const pkg = require('./package')
+require('dotenv').config();
 
 module.exports = {
   mode: 'spa',
@@ -64,17 +65,13 @@ module.exports = {
       pathRewrite: { "^/api/": "" }
     },
     "/register/": {
-      target: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyASKsY3RAogg6LNfLqplYZ-xhIyJojOOV8",
+      target: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.FIRESTORE_API_KEY}`,
       pathRewrite: { "^/register/": "" }
     },
     "/login/": {
-      target: "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyASKsY3RAogg6LNfLqplYZ-xhIyJojOOV8",
+      target: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.FIRESTORE_API_KEY}`,
       pathRewrite: { "^/login/": "" }
     },
-  },
-
-  env: {
-    NEWS_API_KEY: 'b08e6501abbd4d169124d49769625582'
   },
 
   /*
